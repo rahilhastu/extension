@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Get the Meaning",
+  "version": "1.0",
+
+  "description": "Adds a red border to all webpages matching mozilla.org.",
+
+  "icons": {
+    "48": "icons/words.png"
+  },
+
+  "permissions": ["activeTab"],
+
+  "browser_action": {
+    "default_icon": "icons/words.png",
+    "default_title": "Get the Meaning",
+    "default_popup": "popup/choose_site.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_scripts/meaning.js"]
+    }
+  ]
+}
